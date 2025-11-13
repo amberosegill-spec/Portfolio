@@ -1,57 +1,140 @@
-# Portfolio
-Data Scientist
-Technical Skills: Python, SQL, AWS, Snowflake, MATLAB
-Education
-Ph.D., Physics | The University of Texas at Dallas (May 2022)
-M.S., Physics | The University of Texas at Dallas (December 2019)
-B.S., Physics | The University of Texas at Dallas (May 2017)
-Work Experience
-Data Scientist @ Toyota Financial Services (June 2022 - Present)
+import React from "react";
 
-Uncovered and corrected missing step in production data pipeline which impacted over 70% of active accounts
-Redeveloped loan originations model which resulted in 50% improvement in model performance and saving 1 million dollars in potential losses
-Data Science Consultant @ Shawhin Talebi Ventures LLC (December 2020 - Present)
+const Portfolio: React.FC = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900 antialiased">
+      {/* HEADER / HERO */}
+      <header className="relative bg-[linear-gradient(90deg,#0f172a_0%,#071029_100%)] text-white">
+        <div className="max-w-6xl mx-auto px-6 py-20 flex flex-col-reverse md:flex-row items-center gap-10">
+          <div className="w-full md:w-1/2">
+            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">Amberose Gill</h1>
+            <p className="mt-4 text-lg opacity-90">Mechanical Engineer • CFD / FEA • Simulation-driven design</p>
+            <p className="mt-6 text-sm max-w-lg opacity-80">
+              BEng Mechanical Engineering. I design, simulate, and build: Tesla turbines, aerodynamic analyses and engineering systems — using ANSYS, SolidWorks and Python.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a href="#projects" className="inline-block bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded-md text-sm font-medium">View Projects</a>
+              <a href="#contact" className="inline-block border border-white/20 hover:bg-white/5 text-white px-4 py-2 rounded-md text-sm">Contact</a>
+              <a href="/AMBEROSE GILL CV.pdf" className="inline-block ml-2 text-sm underline">Download CV</a>
+            </div>
+          </div>
+          <div className="w-full md:w-1/2 flex justify-center">
+            <div className="w-80 h-80 rounded-2xl bg-gradient-to-br from-slate-800 via-cyan-800 to-indigo-900 shadow-2xl p-6 relative overflow-hidden">
+              <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="url(#g)" strokeWidth="1">
+                  <path d="M20 120 C150 10, 450 10, 580 120" strokeOpacity="0.25" />
+                  <path d="M20 200 C150 90, 450 90, 580 200" strokeOpacity="0.18" />
+                </g>
+              </svg>
+              <div className="relative z-10 text-white flex flex-col items-center justify-center h-full">
+                <div className="bg-white/5 rounded-full px-4 py-2 text-xs font-semibold">Tesla Turbine • Ø254 mm • 50 discs</div>
+                <div className="mt-6 text-center max-w-xs">
+                  <h3 className="text-xl font-bold">Small-scale Tesla Turbine</h3>
+                  <p className="mt-2 text-xs opacity-90">Experimental output 180 W — validated with CFD and analytical models.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
 
-Conducted data collection, processing, and analysis for novel study evaluating the impact of over 300 biometrics variables on human performance in hyper-realistic, live-fire training scenarios
-Applied unsupervised deep learning approaches to longitudinal ICU data to discover novel sepsis sub-phenotypes
-Projects
-Data-Driven EEG Band Discovery with Decision Trees
-Publication
+      {/* ABOUT */}
+      <section id="about" className="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-8 items-center">
+        <div className="md:col-span-2">
+          <h2 className="text-2xl font-semibold">About</h2>
+          <p className="mt-4 text-lg text-slate-700">Mechanical Engineering graduate with hands-on experience in CAD, CFD and FEA simulations using ANSYS and SolidWorks.</p>
+          <ul className="mt-6 grid sm:grid-cols-2 gap-3 text-sm text-slate-600">
+            <li>• ANSYS Fluent / CFX • FEA (Mechanical & Thermal)</li>
+            <li>• SolidWorks / Creo • CAD & fabrication</li>
+            <li>• Python / C++ • automation</li>
+          </ul>
+        </div>
+        <div className="bg-white rounded-lg shadow p-6">
+          <h3 className="font-medium">Quick facts</h3>
+          <div className="mt-4 text-sm text-slate-600 space-y-2">
+            <div><strong>Degree:</strong> BEng Mechanical Engineering — NUST</div>
+            <div><strong>Location:</strong> Sialkot, Pakistan</div>
+            <div><strong>Interests:</strong> CFD, Turbomachinery, Experimental testing</div>
+          </div>
+        </div>
+      </section>
 
-Developed objective strategy for discovering optimal EEG bands based on signal power spectra using Python. This data-driven approach led to better characterization of the underlying power spectrum by identifying bands that outperformed the more commonly used band boundaries by a factor of two. The proposed method provides a fully automated and flexible approach to capturing key signal components and possibly discovering new indices of brain activity.
+      {/* PROJECTS */}
+      <section id="projects" className="max-w-6xl mx-auto px-6 py-12">
+        <h2 className="text-2xl font-semibold">Projects</h2>
+        <div className="mt-6 grid md:grid-cols-2 gap-6">
+          <article className="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+            <h3 className="font-bold text-lg">Design, Analysis & Fabrication of Small-Scale Tesla Turbine</h3>
+            <p className="mt-2 text-sm text-slate-700">Ø254 mm, 50-discs. Experimental power 180 W, theoretical 254 W. CFD validation with k–ω SST.</p>
+          </article>
+          <article className="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+            <h3 className="font-bold text-lg">Airfoil Aerodynamic Analysis</h3>
+            <p className="mt-2 text-sm text-slate-700">NACA 0012, 2412 — angle-of-attack studies, pressure coefficient validation and mesh independence tests.</p>
+          </article>
+        </div>
+      </section>
 
-EEG Band Discovery
+      {/* EXPERIENCE */}
+      <section id="experience" className="max-w-6xl mx-auto px-6 py-12">
+        <h2 className="text-2xl font-semibold">Experience</h2>
+        <div className="mt-6 space-y-4">
+          <div className="p-4 rounded-lg border">
+            <h3 className="font-semibold">CFD Engineer (Freelancer) — Fiverr</h3>
+            <p className="mt-2 text-sm text-slate-700">Delivered 10+ CFD projects on ANSYS Fluent; aerodynamic analyses for various airfoils and turbomachinery.</p>
+          </div>
+          <div className="p-4 rounded-lg border">
+            <h3 className="font-semibold">Intern — InspecTest (NDT)</h3>
+            <p className="mt-2 text-sm text-slate-700">Hands-on experience with PT, MPT and UT following standard safety protocols.</p>
+          </div>
+        </div>
+      </section>
 
-Decoding Physical and Cognitive Impacts of Particulate Matter Concentrations at Ultra-Fine Scales
-Publication
+      {/* EDUCATION & CERTIFICATIONS */}
+      <section id="education" className="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-6">
+        <div>
+          <h2 className="text-2xl font-semibold">Education</h2>
+          <div className="mt-4 p-4 rounded-lg border">
+            <h3 className="font-semibold">BEng Mechanical Engineering — NUST</h3>
+            <p className="mt-2 text-sm text-slate-700">Thesis: Design, Analysis and Fabrication of Small-Scale Tesla Turbine</p>
+          </div>
+        </div>
+        <div>
+          <h2 className="text-2xl font-semibold">Certifications</h2>
+          <div className="mt-4 p-4 rounded-lg border space-y-2 text-sm text-slate-700">
+            <div>• ANSYS: Applications of Shock Expansion</div>
+            <div>• ANSYS: Turbulence Modeling in Fluent</div>
+            <div>• ANSYS: Vertical Axis Wind Turbine</div>
+          </div>
+        </div>
+      </section>
 
-Used Matlab to train over 100 machine learning models which estimated particulate matter concentrations based on a suite of over 300 biometric variables. We found biometric variables can be used to accurately estimate particulate matter concentrations at ultra-fine spatial scales with high fidelity (r2 = 0.91) and that smaller particles are better estimated than larger ones. Inferring environmental conditions solely from biometric measurements allows us to disentangle key interactions between the environment and the body.
+      {/* CONTACT */}
+      <section id="contact" className="max-w-6xl mx-auto px-6 py-12">
+        <h2 className="text-2xl font-semibold">Contact</h2>
+        <div className="mt-6 grid md:grid-cols-2 gap-6">
+          <div className="p-6 rounded-lg border">
+            <h3 className="font-semibold">Get in touch</h3>
+            <p className="mt-2 text-sm text-slate-700">Email me at <a href="mailto:amberosegill@gmail.com" className="underline">amberosegill@gmail.com</a></p>
+          </div>
+          <div className="p-6 rounded-lg border">
+            <h3 className="font-semibold">Quick links</h3>
+            <ul className="mt-3 text-sm text-slate-700 space-y-2">
+              <li><a href="https://www.linkedin.com/in/amberose-gill-070a9422a/" className="underline">LinkedIn</a></li>
+              <li><a href="https://www.fiverr.com/zerose_1?public_mode=true" className="underline">Fiverr</a></li>
+              <li><a href="/AMBEROSE GILL CV.pdf" className="underline">Download CV</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-Bike Study
+      <footer className="bg-slate-900 text-white py-6">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-sm">© {(new Date()).getFullYear()} Amberose Gill — Mechanical Engineering Portfolio</div>
+          <div className="text-sm opacity-80">Built with React + Tailwind</div>
+        </div>
+      </footer>
+    </div>
+  );
+};
 
-Talks & Lectures
-Causality: The new science of an old question - GSP Seminar, Fall 2021
-
-Guest Lecture: Dimensionality Reduction - Big Data and Machine Learning for Scientific Discovery (PHYS 5336), Spring 2021
-
-Guest Lecture: Fourier and Wavelet Transforms - Scientific Computing (PHYS 5315), Fall 2020
-
-A Brief Introduction to Optimization - GSP Seminar, Fall 2019
-
-Weeks of Welcome Poster Competition - UTD, Fall 2019
-
-A Brief Introduction to Networks - GSP Seminar, Spring 2019
-
-Data Science YouTube
-
-Publications
-Talebi S., Lary D.J., Wijeratne L. OH., and Lary, T. Modeling Autonomic Pupillary Responses from External Stimuli Using Machine Learning (2019). DOI: 10.26717/BJSTR.2019.20.003446
-Wijeratne, L.O.; Kiv, D.R.; Aker, A.R.; Talebi, S.; Lary, D.J. Using Machine Learning for the Calibration of Airborne Particulate Sensors. Sensors 2020, 20, 99.
-Lary, D.J.; Schaefer, D.; Waczak, J.; Aker, A.; Barbosa, A.; Wijeratne, L.O.H.; Talebi, S.; Fernando, B.; Sadler, J.; Lary, T.; Lary, M.D. Autonomous Learning of New Environments with a Robotic Team Employing Hyper-Spectral Remote Sensing, Comprehensive In-Situ Sensing and Machine Learning. Sensors 2021, 21, 2240. https://doi.org/10.3390/s21062240
-Zhang, Y.; Wijeratne, L.O.H.; Talebi, S.; Lary, D.J. Machine Learning for Light Sensor Calibration. Sensors 2021, 21, 6259. https://doi.org/10.3390/s21186259
-Talebi, S.; Waczak, J.; Fernando, B.; Sridhar, A.; Lary, D.J. Data-Driven EEG Band Discovery with Decision Trees. Preprints 2022, 2022030145 (doi: 10.20944/preprints202203.0145.v1).
-Fernando, B.A.; Sridhar, A.; Talebi, S.; Waczak, J.; Lary, D.J. Unsupervised Blink Detection Using Eye Aspect Ratio Values. Preprints 2022, 2022030200 (doi: 10.20944/preprints202203.0200.v1).
-Talebi, S. et al. Decoding Physical and Cognitive Impacts of PM Concentrations at Ultra-fine Scales, 29 March 2022, PREPRINT (Version 1) available at Research Square [https://doi.org/10.21203/rs.3.rs-1499191/v1]
-Lary, D.J. et al. (2022). Machine Learning, Big Data, and Spatial Tools: A Combination to Reveal Complex Facts That Impact Environmental Health. In: Faruque, F.S. (eds) Geospatial Technology for Human Well-Being and Health. Springer, Cham. https://doi.org/10.1007/978-3-030-71377-5_12
-Wijerante, L.O.H. et al. (2022). Advancement in Airborne Particulate Estimation Using Machine Learning. In: Faruque, F.S. (eds) Geospatial Technology for Human Well-Being and Health. Springer, Cham. https://doi.org/10.1007/978-3-030-71377-5_13
-Data Science Blog
+export default Portfolio;
